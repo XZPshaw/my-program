@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 source /environment.sh
@@ -13,8 +14,9 @@ dt-launchfile-init
 # NOTE: Use `dt-exec COMMAND` to run the main process (blocking process)
 
 # launching app
-dt-exec python3 -m "my_package.my_script"
-
+roscore &
+sleep 5
+dt-exec rosrun my_package my_publisher_node.py
 
 
 # ----------------------------------------------------------------------------
